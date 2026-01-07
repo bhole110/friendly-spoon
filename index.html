@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <meta name="theme-color" content="#05060f">
+
+    <!-- META PIXEL -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f.fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '2268304967022613');
+        fbq('track', 'PageView');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            color: #fff;
+            background: #05060f;
+            overflow-x: hidden;
+        }
+
+        /* LIVE NEON BACKGROUND */
+
+        .bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 15% 25%, rgba(255, 200, 80, .28), transparent 45%), radial-gradient(circle at 85% 40%, rgba(80, 160, 255, .30), transparent 50%), linear-gradient(120deg, #05060f, #02030a);
+            animation: neonMove 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonMove {
+            from {
+                filter: hue-rotate(0deg)
+            }
+            to {
+                filter: hue-rotate(18deg)
+            }
+        }
+
+        .wrapper {
+            max-width: 420px;
+            margin: auto;
+            padding: 22px;
+        }
+
+        /* LOGO */
+
+        .logo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px
+        }
+
+        .logo-ring {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, #ffd36a, #4cc9f0);
+            animation: ringSpin 6s linear infinite;
+        }
+
+        @keyframes ringSpin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .logo-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%
+        }
+
+        /* TEXT */
+
+        h1 {
+            text-align: center;
+            margin: 14px 0 6px;
+            font-size: 26px;
+            color: #ffd36a;
+            text-shadow: 0 0 22px rgba(255, 211, 106, .7);
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 13px;
+            color: #cfd6ff
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            padding: 14px 8px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+
+        .stat h3 {
+            margin: 0;
+            font-size: 18px
+        }
+
+        .stat p {
+            margin: 6px 0 0;
+            font-size: 11px;
+            color: #b5bdfb
+        }
+
+        /* JOIN BUTTON – EXTREME */
+
+        .joinBtn {
+            position: relative;
+            width: 100%;
+            padding: 18px;
+            font-size: 17px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ffd36a, #ffb703);
+            color: #000;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 0 45px rgba(255, 211, 106, .9);
+            animation: pump 1.4s infinite;
+        }
+
+        @keyframes pump {
+            0% {
+                transform: scale(1)
+            }
+            50% {
+                transform: scale(1.06)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        .joinBtn::before,
+        .joinBtn::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 211, 106, .9);
+            animation: pulseRing 1.6s infinite;
+        }
+
+        .joinBtn::after {
+            animation-delay: .6s
+        }
+
+        @keyframes pulseRing {
+            0% {
+                opacity: 1;
+                transform: scale(1)
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.6)
+            }
+        }
+
+        /* ADS BUTTON */
+
+        .adsBtn {
+            margin: 14px auto 0;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid rgba(80, 160, 255, .7);
+            color: #9fdcff;
+            font-size: 13px;
+            box-shadow: 0 0 18px rgba(80, 160, 255, .6);
+            cursor: pointer;
+        }
+
+        /* AUTO JOIN */
+
+        .auto {
+            margin-top: 22px;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffe08a;
+            box-shadow: 0 0 25px rgba(255, 211, 106, .25);
+        }
+
+        .footer {
+            margin: 26px 0 12px;
+            text-align: center;
+            font-size: 11px;
+            color: #7b84c5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+    <div class="wrapper">
+
+        <div class="logo-wrap">
+            <div class="logo-ring">
+                <img src="logo.png" alt="logo">
+            </div>
+        </div>
+
+        <h1>MONEYBDG X PROFIT</h1>
+        <div class="sub"><span id="liveCount">400</span> Live Traders Online</div>
+
+        <div class="stats">
+            <div class="stat">
+                <h3 id="pred">0</h3>
+                <p>Predictions</p>
+            </div>
+            <div class="stat">
+                <h3 id="acc">0%</h3>
+                <p>Accuracy</p>
+            </div>
+            <div class="stat">
+                <h3 id="rate">0★</h3>
+                <p>Rating</p>
+            </div>
+        </div>
+
+        <button class="joinBtn" id="joinBtn">🚀 JOIN TELEGRAM NOW</button>
+       
+
+        <div class="auto">
+            ⏱️ Auto Join Telegram In <strong><span id="sec">30</span>s</strong>
+        </div>
+ <button class="adsBtn" id="adsBtn">📢 Ads / Promotion Setup</button>
+        <div class="footer">© BHOLE ADS AGENCY — High-converting gambling leads & anti-fake-click systems. Setup: {TG} @BHOLENOTOP</div>
+
+    </div>
+
+    <script>
+        const TG_APP = "https://t.me/+K70Ww-zXKE1jMjI1";
+        const TG_WEB = "https://t.me/+K70Ww-zXKE1jMjI1";
+        const ADS = "https://t.me/+K70Ww-zXKE1jMjI1";
+
+        /* JOIN HANDLER */
+        let lead = false;
+
+        function joinTG() {
+            if (!lead) {
+                fbq("track", "");
+                lead = true;
+            }
+            location.href = TG_APP;
+            setTimeout(() => location.href = TG_WEB, 1200);
+        }
+        joinBtn.onclick = joinTG;
+        adsBtn.onclick = () => location.href = ADS;
+
+        /* LIVE USERS */
+        let live = 400;
+        setInterval(() => {
+            if (live < 900) {
+                live += Math.floor(Math.random() * 8) + 4;
+                if (live > 900) live = 900;
+                liveCount.textContent = live;
+            }
+        }, 600);
+
+        /* STATS ANIMATION */
+        function animate(id, target, suffix = "") {
+            let c = 0,
+                i = setInterval(() => {
+                    c += Math.ceil(target / 40);
+                    if (c >= target) {
+                        c = target;
+                        clearInterval(i);
+                    }
+                    document.getElementById(id).textContent = c + suffix;
+                }, 35);
+        }
+        animate("pred", 18542);
+        animate("acc", 97, "%");
+        animate("rate", 4.9, "★");
+
+        /* AUTO JOIN 30s */
+        let s = 30;
+        setInterval(() => {
+            if (s > 0) {
+                s--;
+                sec.textContent = s;
+            } else {
+                joinTG();
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
